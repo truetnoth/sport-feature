@@ -1,0 +1,42 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #FFFFFF;
+  color: #1A1A1A;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:root {
+  --color-bg: #FFFFFF;
+  --color-text: #1A1A1A;
+  --color-text-secondary: #7B7B7B;
+  --color-accent: #FFD60A;
+  --color-border: #E5E5E5;
+  --color-filter-active-bg: #1A1A1A;
+  --color-filter-active-text: #FFFFFF;
+  --color-filter-inactive-bg: #F0F0F0;
+  --color-filter-inactive-text: #1A1A1A;
+}

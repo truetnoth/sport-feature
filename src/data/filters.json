@@ -1,0 +1,58 @@
+{
+  "goal": [
+    { "value": "strength", "label": "Сила и мышцы" },
+    { "value": "flexibility", "label": "Гибкость" },
+    { "value": "coordination", "label": "Координация" },
+    { "value": "endurance", "label": "Выносливость" },
+    { "value": "health", "label": "Здоровье" },
+    { "value": "yoga", "label": "Йога" }
+  ],
+  "equipment": [
+    { "value": "none", "label": "Без оборудования" },
+    { "value": "dumbbells", "label": "Гантели" },
+    { "value": "barbell", "label": "Штанга" },
+    { "value": "kettlebell", "label": "Гири" },
+    { "value": "machines", "label": "Тренажёры" },
+    { "value": "fitball", "label": "Фитбол" },
+    { "value": "chair", "label": "Стул" },
+    { "value": "pullup_bar", "label": "Турник" },
+    { "value": "trx", "label": "TRX" },
+    { "value": "resistance_bands", "label": "Фитнес-резинки" }
+  ],
+  "bodyPart": [
+    { "value": "chest", "label": "Грудь" },
+    { "value": "shoulders", "label": "Плечи" },
+    { "value": "biceps", "label": "Бицепсы" },
+    { "value": "triceps", "label": "Трицепсы" },
+    { "value": "back", "label": "Спина" },
+    { "value": "abs", "label": "Пресс" },
+    { "value": "glutes", "label": "Ягодицы" },
+    { "value": "legs", "label": "Ноги" }
+  ],
+  "bodyArea": [
+    { "value": "spine", "label": "Позвоночник" },
+    { "value": "lower_body", "label": "Нижняя часть тела" },
+    { "value": "upper_body", "label": "Верхняя часть тела" }
+  ],
+  "location": [
+    { "value": "home", "label": "Дома" },
+    { "value": "gym", "label": "В зале" },
+    { "value": "outdoor", "label": "На улице" },
+    { "value": "office", "label": "В офисе" }
+  ],
+  "difficulty": [
+    { "value": "beginner", "label": "Начинающий" },
+    { "value": "intermediate", "label": "Средний" },
+    { "value": "advanced", "label": "Продвинутый" }
+  ],
+  "special": [
+    { "value": "pregnant", "label": "Для беременных" },
+    { "value": "elderly", "label": "Для пожилых" },
+    { "value": "herniated_disc", "label": "При грыже" },
+    { "value": "knee_problems", "label": "Проблемы с коленями" },
+    { "value": "hip_problems", "label": "Проблемы с ТБС" },
+    { "value": "posture", "label": "Осанка" },
+    { "value": "foot_health", "label": "Здоровье стоп" },
+    { "value": "office_warmup", "label": "Разминка в офисе" }
+  ]
+}
