@@ -23,8 +23,7 @@ export interface Exercise {
   shortDescription: string;
   fullDescription: string;
   steps: string[];
-  image: string;
-  gif: string;
+  media: string[];
   sourceArticleUrl: string;
   sourceArticleTitle: string;
   tags: ExerciseTags;

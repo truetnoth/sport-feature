@@ -24,11 +24,7 @@ const difficultyLabel: Record<string, string> = {
   advanced: 'Продвинутый',
 };
 
-const mediaPlaceholders = [
-  { label: 'Фото 1', isGif: false },
-  { label: 'Фото 2', isGif: false },
-  { label: 'GIF', isGif: true },
-];
+const fallbackMedia = ['placeholder:Фото 1', 'placeholder:Фото 2', 'placeholder:GIF'];
 
 export default function ExerciseDetailPage({ exercises, favoritesHook, playlistsHook }: Props) {
   const { slug } = useParams<{ slug: string }>();
@@ -63,7 +59,8 @@ export default function ExerciseDetailPage({ exercises, favoritesHook, playlists
     setShowPlaylist(false);
   };
 
-  const total = mediaPlaceholders.length;
+  const mediaItems = exercise.media.length > 0 ? exercise.media : fallbackMedia;
+  const total = mediaItems.length;
 
   return (
     <div className={styles.root}>
@@ -90,11 +87,17 @@ export default function ExerciseDetailPage({ exercises, favoritesHook, playlists
           className={styles.carouselTrack}
           style={{ transform: `translateX(-${carouselIdx * 100}%)` }}
         >
-          {mediaPlaceholders.map((item, i) => (
+          {mediaItems.map((src, i) => (
             <div key={i} className={styles.carouselSlide}>
-              <div className={`${styles.carouselPlaceholder} ${item.isGif ? styles.carouselGif : ''}`}>
-                <span className={styles.carouselLabel}>{item.label}</span>
-              </div>
+              {src.startsWith('placeholder:') ? (
+                <div className={`${styles.carouselPlaceholder} ${src.endsWith('GIF') ? styles.carouselGif : ''}`}>
+                  <span className={styles.carouselLabel}>{src.replace('placeholder:', '')}</span>
+                </div>
+              ) : src.endsWith('.gif') ? (
+                <img src={src} alt={`${exercise.title} — GIF`} className={styles.carouselImg} />
+              ) : (
+                <img src={src} alt={`${exercise.title} — фото ${i + 1}`} className={styles.carouselImg} />
+              )}
             </div>
           ))}
         </div>
