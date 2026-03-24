@@ -1,6 +1,6 @@
 {
   "goal": [
-    { "value": "strength", "label": "Сила и мышцы" },
+    { "value": "strength", "label": "Сила" },
     { "value": "flexibility", "label": "Гибкость" },
     { "value": "coordination", "label": "Координация" },
     { "value": "endurance", "label": "Выносливость" }
