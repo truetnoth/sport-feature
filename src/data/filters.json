@@ -3,9 +3,7 @@
     { "value": "strength", "label": "Сила и мышцы" },
     { "value": "flexibility", "label": "Гибкость" },
     { "value": "coordination", "label": "Координация" },
-    { "value": "endurance", "label": "Выносливость" },
-    { "value": "health", "label": "Здоровье" },
-    { "value": "yoga", "label": "Йога" }
+    { "value": "endurance", "label": "Выносливость" }
   ],
   "equipment": [
     { "value": "none", "label": "Без оборудования" },
@@ -14,7 +12,6 @@
     { "value": "kettlebell", "label": "Гири" },
     { "value": "machines", "label": "Тренажёры" },
     { "value": "fitball", "label": "Фитбол" },
-    { "value": "chair", "label": "Стул" },
     { "value": "pullup_bar", "label": "Турник" },
     { "value": "trx", "label": "TRX" },
     { "value": "resistance_bands", "label": "Фитнес-резинки" }
@@ -22,17 +19,25 @@
   "bodyPart": [
     { "value": "chest", "label": "Грудь" },
     { "value": "shoulders", "label": "Плечи" },
-    { "value": "biceps", "label": "Бицепсы" },
-    { "value": "triceps", "label": "Трицепсы" },
+    { "value": "arms", "label": "Руки" },
     { "value": "back", "label": "Спина" },
     { "value": "abs", "label": "Пресс" },
-    { "value": "glutes", "label": "Ягодицы" },
-    { "value": "legs", "label": "Ноги" }
+    { "value": "legs", "label": "Ноги" },
+    { "value": "glutes", "label": "Ягодицы" }
   ],
   "bodyArea": [
-    { "value": "spine", "label": "Позвоночник" },
-    { "value": "lower_body", "label": "Нижняя часть тела" },
-    { "value": "upper_body", "label": "Верхняя часть тела" }
+    { "value": "biceps", "label": "Бицепсы" },
+    { "value": "triceps", "label": "Трицепсы" },
+    { "value": "lats", "label": "Широчайшие" },
+    { "value": "trapezius", "label": "Трапециевидные" },
+    { "value": "spine_extensors", "label": "Разгибатели позвоночника" },
+    { "value": "rectus_abdominis", "label": "Прямая живота" },
+    { "value": "obliques", "label": "Косые живота" },
+    { "value": "quadriceps", "label": "Квадрицепсы" },
+    { "value": "hamstrings", "label": "Бицепсы бёдер" },
+    { "value": "calves", "label": "Икроножные" },
+    { "value": "gluteus_med", "label": "Средние и малые ягодичные" },
+    { "value": "gluteus_max", "label": "Большие ягодичные" }
   ],
   "location": [
     { "value": "home", "label": "Дома" },

@@ -19,9 +19,8 @@ type FilterCategory = {
 const categories: FilterCategory[] = [
   { key: 'goal', label: 'Цель', options: filtersConfig.goal },
   { key: 'equipment', label: 'Оборудование', options: filtersConfig.equipment },
-  { key: 'bodyPart', label: 'Группа мышц', options: filtersConfig.bodyPart },
-  { key: 'bodyArea', label: 'Область тела', options: filtersConfig.bodyArea },
-  { key: 'location', label: 'Место', options: filtersConfig.location },
+  { key: 'bodyPart', label: 'Область тела', options: filtersConfig.bodyPart },
+  { key: 'bodyArea', label: 'Мышцы', options: filtersConfig.bodyArea },
   { key: 'difficulty', label: 'Сложность', options: filtersConfig.difficulty },
   { key: 'special', label: 'Особые состояния', options: filtersConfig.special },
 ];

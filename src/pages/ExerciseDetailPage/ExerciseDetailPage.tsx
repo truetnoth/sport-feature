@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Exercise } from '../../types';
 import { useFavorites } from '../../hooks/useFavorites';
@@ -24,17 +24,29 @@ const difficultyLabel: Record<string, string> = {
   advanced: 'Продвинутый',
 };
 
+const mediaPlaceholders = [
+  { label: 'Фото 1', isGif: false },
+  { label: 'Фото 2', isGif: false },
+  { label: 'GIF', isGif: true },
+];
+
 export default function ExerciseDetailPage({ exercises, favoritesHook, playlistsHook }: Props) {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const exercise = exercises.find(ex => ex.slug === slug);
   const [showPlaylist, setShowPlaylist] = useState(false);
+  const [carouselIdx, setCarouselIdx] = useState(0);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setCarouselIdx(0);
+  }, [slug]);
 
   if (!exercise) {
     return (
       <div className={styles.notFound}>
         <p>Упражнение не найдено.</p>
-        <button onClick={() => navigate(-1)} className={styles.backBtn}>← Назад</button>
+        <button onClick={() => navigate('/')} className={styles.backBtn}>← Назад к списку</button>
       </div>
     );
   }
@@ -51,9 +63,11 @@ export default function ExerciseDetailPage({ exercises, favoritesHook, playlists
     setShowPlaylist(false);
   };
 
+  const total = mediaPlaceholders.length;
+
   return (
     <div className={styles.root}>
-      <button className={styles.backBtn} onClick={() => navigate(-1)}>
+      <button className={styles.backBtn} onClick={() => navigate('/')}>
         ← Назад к списку
       </button>
 
@@ -71,21 +85,58 @@ export default function ExerciseDetailPage({ exercises, favoritesHook, playlists
         <p className={styles.shortDesc}>{exercise.shortDescription}</p>
       </div>
 
-      <div className={styles.media}>
-        <div className={styles.mainMedia}>
-          <div className={styles.mediaPlaceholder}>
-            <span className={styles.mediaLabel}>GIF / Видео</span>
-          </div>
+      <div className={styles.carousel}>
+        <div
+          className={styles.carouselTrack}
+          style={{ transform: `translateX(-${carouselIdx * 100}%)` }}
+        >
+          {mediaPlaceholders.map((item, i) => (
+            <div key={i} className={styles.carouselSlide}>
+              <div className={`${styles.carouselPlaceholder} ${item.isGif ? styles.carouselGif : ''}`}>
+                <span className={styles.carouselLabel}>{item.label}</span>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className={styles.thumbRow}>
-          <div className={styles.thumb}><span>Фото 1</span></div>
-          <div className={styles.thumb}><span>Фото 2</span></div>
-          <div className={styles.thumb}><span>Фото 3</span></div>
-        </div>
+        {total > 1 && (
+          <>
+            <button
+              className={`${styles.carouselBtn} ${styles.carouselBtnPrev}`}
+              onClick={() => setCarouselIdx(i => Math.max(0, i - 1))}
+              disabled={carouselIdx === 0}
+              aria-label="Предыдущий"
+            >
+              ‹
+            </button>
+            <button
+              className={`${styles.carouselBtn} ${styles.carouselBtnNext}`}
+              onClick={() => setCarouselIdx(i => Math.min(total - 1, i + 1))}
+              disabled={carouselIdx === total - 1}
+              aria-label="Следующий"
+            >
+              ›
+            </button>
+            <div className={styles.carouselDots}>
+              {mediaPlaceholders.map((_, i) => (
+                <button
+                  key={i}
+                  className={`${styles.carouselDot} ${i === carouselIdx ? styles.carouselDotActive : ''}`}
+                  onClick={() => setCarouselIdx(i)}
+                  aria-label={`Слайд ${i + 1}`}
+                />
+              ))}
+            </div>
+          </>
+        )}
       </div>
 
       <div className={styles.content}>
         <div className={styles.main}>
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Описание</h2>
+            <p className={styles.fullDesc}>{exercise.fullDescription}</p>
+          </section>
+
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>Как выполнять</h2>
             <ol className={styles.steps}>
@@ -94,18 +145,13 @@ export default function ExerciseDetailPage({ exercises, favoritesHook, playlists
               ))}
             </ol>
           </section>
-
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Описание</h2>
-            <p className={styles.fullDesc}>{exercise.fullDescription}</p>
-          </section>
         </div>
 
         <aside className={styles.aside}>
           <div className={styles.meta}>
             {exercise.tags.bodyPart.length > 0 && (
               <div className={styles.metaRow}>
-                <span className={styles.metaLabel}>Группы мышц</span>
+                <span className={styles.metaLabel}>Область тела</span>
                 <div className={styles.metaTags}>
                   {exercise.tags.bodyPart.map(bp => (
                     <span key={bp} className={styles.metaTag}>{getLabel(filtersConfig.bodyPart, bp)}</span>
@@ -115,7 +161,7 @@ export default function ExerciseDetailPage({ exercises, favoritesHook, playlists
             )}
             {exercise.tags.bodyArea.length > 0 && (
               <div className={styles.metaRow}>
-                <span className={styles.metaLabel}>Область тела</span>
+                <span className={styles.metaLabel}>Мышцы</span>
                 <div className={styles.metaTags}>
                   {exercise.tags.bodyArea.map(ba => (
                     <span key={ba} className={styles.metaTag}>{getLabel(filtersConfig.bodyArea, ba)}</span>
@@ -128,14 +174,6 @@ export default function ExerciseDetailPage({ exercises, favoritesHook, playlists
               <div className={styles.metaTags}>
                 {exercise.tags.equipment.map(e => (
                   <span key={e} className={styles.metaTag}>{getLabel(filtersConfig.equipment, e)}</span>
-                ))}
-              </div>
-            </div>
-            <div className={styles.metaRow}>
-              <span className={styles.metaLabel}>Место</span>
-              <div className={styles.metaTags}>
-                {exercise.tags.location.map(l => (
-                  <span key={l} className={styles.metaTag}>{getLabel(filtersConfig.location, l)}</span>
                 ))}
               </div>
             </div>

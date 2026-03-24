@@ -18,7 +18,7 @@
     "tags": {
       "goal": ["strength"],
       "equipment": ["barbell"],
-      "bodyPart": ["chest", "triceps", "shoulders"],
+      "bodyPart": ["chest", "arms", "shoulders"],
       "bodyArea": [],
       "location": ["gym"],
       "difficulty": "intermediate",
@@ -71,7 +71,7 @@
     "tags": {
       "goal": ["strength"],
       "equipment": ["pullup_bar"],
-      "bodyPart": ["back", "biceps"],
+      "bodyPart": ["back", "arms"],
       "bodyArea": [],
       "location": ["gym", "outdoor"],
       "difficulty": "intermediate",
@@ -97,7 +97,7 @@
     "tags": {
       "goal": ["strength"],
       "equipment": ["none"],
-      "bodyPart": ["chest", "triceps", "shoulders"],
+      "bodyPart": ["chest", "arms", "shoulders"],
       "bodyArea": [],
       "location": ["home", "gym", "outdoor"],
       "difficulty": "beginner",
@@ -148,7 +148,7 @@
     "sourceArticleUrl": "https://t-j.ru/",
     "sourceArticleTitle": "Упражнения для пресса",
     "tags": {
-      "goal": ["strength", "health"],
+      "goal": ["strength"],
       "equipment": ["none"],
       "bodyPart": ["abs", "back"],
       "bodyArea": [],
@@ -202,7 +202,7 @@
     "tags": {
       "goal": ["strength"],
       "equipment": ["machines"],
-      "bodyPart": ["back", "biceps"],
+      "bodyPart": ["back", "arms"],
       "bodyArea": [],
       "location": ["gym"],
       "difficulty": "beginner",
@@ -252,10 +252,10 @@
     "sourceArticleUrl": "https://t-j.ru/",
     "sourceArticleTitle": "Йога для начинающих",
     "tags": {
-      "goal": ["yoga", "flexibility"],
+      "goal": ["flexibility"],
       "equipment": ["none"],
       "bodyPart": [],
-      "bodyArea": ["spine", "lower_body"],
+      "bodyArea": [],
       "location": ["home", "gym"],
       "difficulty": "beginner",
       "special": ["herniated_disc", "posture"]
@@ -281,7 +281,7 @@
       "goal": ["flexibility"],
       "equipment": ["none"],
       "bodyPart": [],
-      "bodyArea": ["lower_body"],
+      "bodyArea": [],
       "location": ["home", "office"],
       "difficulty": "beginner",
       "special": ["office_warmup", "knee_problems"]
@@ -304,10 +304,10 @@
     "sourceArticleUrl": "https://t-j.ru/",
     "sourceArticleTitle": "Упражнения при болях в спине",
     "tags": {
-      "goal": ["flexibility", "health"],
+      "goal": ["flexibility"],
       "equipment": ["none"],
       "bodyPart": [],
-      "bodyArea": ["spine"],
+      "bodyArea": [],
       "location": ["home", "office"],
       "difficulty": "beginner",
       "special": ["herniated_disc", "posture", "office_warmup", "elderly"]
@@ -330,7 +330,7 @@
     "sourceArticleUrl": "https://t-j.ru/",
     "sourceArticleTitle": "Кардио тренировки дома",
     "tags": {
-      "goal": ["endurance", "health"],
+      "goal": ["endurance"],
       "equipment": ["none"],
       "bodyPart": [],
       "bodyArea": [],
@@ -439,10 +439,10 @@
     "sourceArticleUrl": "https://t-j.ru/",
     "sourceArticleTitle": "Йога для равновесия",
     "tags": {
-      "goal": ["yoga", "coordination"],
+      "goal": ["coordination"],
       "equipment": ["none"],
       "bodyPart": [],
-      "bodyArea": ["lower_body"],
+      "bodyArea": [],
       "location": ["home", "gym"],
       "difficulty": "beginner",
       "special": []
@@ -466,7 +466,7 @@
     "sourceArticleUrl": "https://t-j.ru/",
     "sourceArticleTitle": "Упражнения для беременных",
     "tags": {
-      "goal": ["health"],
+      "goal": [],
       "equipment": ["none"],
       "bodyPart": [],
       "bodyArea": [],
@@ -493,10 +493,10 @@
     "sourceArticleUrl": "https://t-j.ru/",
     "sourceArticleTitle": "Разминка для офиса",
     "tags": {
-      "goal": ["flexibility", "health"],
+      "goal": ["flexibility"],
       "equipment": ["none"],
       "bodyPart": ["shoulders"],
-      "bodyArea": ["upper_body"],
+      "bodyArea": [],
       "location": ["office", "home"],
       "difficulty": "beginner",
       "special": ["office_warmup", "posture", "elderly"]
@@ -522,7 +522,7 @@
     "tags": {
       "goal": ["strength"],
       "equipment": ["dumbbells"],
-      "bodyPart": ["back", "biceps"],
+      "bodyPart": ["back", "arms"],
       "bodyArea": [],
       "location": ["home", "gym"],
       "difficulty": "beginner",
