@@ -120,7 +120,7 @@ export default function ExerciseDetailPage({ exercises, favoritesHook, playlists
               ›
             </button>
             <div className={styles.carouselDots}>
-              {mediaPlaceholders.map((_, i) => (
+              {mediaItems.map((_: string, i: number) => (
                 <button
                   key={i}
                   className={`${styles.carouselDot} ${i === carouselIdx ? styles.carouselDotActive : ''}`}
